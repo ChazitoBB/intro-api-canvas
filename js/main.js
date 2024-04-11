@@ -1,28 +1,35 @@
-function draw_cuadrado() {
-    const canvas = document.getElementById("canvas_cuadrado");
-    if (canvas.getContext) {
-        const ctx = canvas.getContext("2d");
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
 
-        ctx.fillStyle = 'rgb(10,50,94)';
-        ctx.fillRect(25, 25, 100, 100);
-        ctx.clearRect(45, 45, 60, 60);
-        ctx.strokeRect(50, 50, 50, 50);
+ctx.fillStyle = "green";
+ctx.fillRect(10, 10, 100, 100);
+
+function drawRectangulo() {
+    const canvas = document.getElementById("rectangulo");
+    if (canvas.getContext) {
+      const ctx = canvas.getContext("2d");
+  
+      ctx.fillRect(25, 25, 100, 100);
+      ctx.clearRect(45, 45, 60, 60);
+      ctx.strokeRect(50, 50, 50, 50);
     }
 }
-function draw_path() {
-    const canvas = document.getElementById("canvas_path");
+
+function drawTriangulo() {
+    const canvas = document.getElementById("Triangulo");
     if (canvas.getContext) {
       const ctx = canvas.getContext("2d");
   
       ctx.beginPath();
-      ctx.moveTo(100, 65);
-      ctx.lineTo(80, 90);
-      ctx.lineTo(120, 90);
+      ctx.moveTo(75, 50);
+      ctx.lineTo(100, 75);
+      ctx.lineTo(100, 25);
       ctx.fill();
     }
-  }
-  function draw_pluma() {
-    const canvas = document.getElementById("canvas_pluma");
+}
+
+function drawPluma() {
+    const canvas = document.getElementById("Pluma");
     if (canvas.getContext) {
       const ctx = canvas.getContext("2d");
   
@@ -37,9 +44,11 @@ function draw_path() {
       ctx.stroke();
     }
   }
+  
 
-  function draw_lineas() {
-    const canvas = document.getElementById("canvas_linea");
+
+function drawLineas() {
+    const canvas = document.getElementById("Lineas");
     if (canvas.getContext) {
       const ctx = canvas.getContext("2d");
   
@@ -59,8 +68,9 @@ function draw_path() {
       ctx.stroke();
     }
   }
-  function draw_arco() {
-    const canvas = document.getElementById("canvas_arco");
+  
+function drawArcos() {
+    const canvas = document.getElementById("Arcos");
     if (canvas.getContext) {
       const ctx = canvas.getContext("2d");
   
@@ -85,8 +95,10 @@ function draw_path() {
       }
     }
   }
-  function draw_bezier() {
-    const canvas = document.getElementById("canvas_bezier");
+
+
+  function drawCurvas() {
+    const canvas = document.getElementById("Curvas");
     if (canvas.getContext) {
       const ctx = canvas.getContext("2d");
   
@@ -102,8 +114,9 @@ function draw_path() {
       ctx.stroke();
     }
   }
-  function draw_beziercubico() {
-    const canvas = document.getElementById("canvas_beziercubico");
+
+function drawCubicas() {
+    const canvas = document.getElementById("Cubicas");
     if (canvas.getContext) {
       const ctx = canvas.getContext("2d");
   
@@ -119,8 +132,10 @@ function draw_path() {
       ctx.fill();
     }
   }
-  function draw_combinaciones() {
-    const canvas = document.getElementById("canvas_combinaciones");
+
+
+function drawRect() {
+    const canvas = document.getElementById("Rect");
     if (canvas.getContext) {
       const ctx = canvas.getContext("2d");
   
@@ -198,35 +213,16 @@ function draw_path() {
     ctx.arcTo(x, y, x, y + radius, radius);
     ctx.stroke();
   }
-
-  function draw_path2() {
-    const canvas = document.getElementById("canvas_path2");
-    if (canvas.getContext) {
-      const p = new Path2D("M10 10 h 80 v 80 h -80 Z");
-      const ctx = canvas.getContext("2d");
-  
-      const rectangle = new Path2D();
-      rectangle.rect(10, 10, 50, 50);
-  
-      const circle = new Path2D();
-      circle.arc(100, 35, 25, 0, 2 * Math.PI);
-  
-      ctx.stroke(rectangle);
-      ctx.fill(circle);
-    }
-  }
-
-  
   
   
   
 
-  draw_cuadrado();
-  draw_path();
-  draw_pluma();
-  draw_lineas();
-  draw_arco();
-  draw_bezier();
-  draw_beziercubico();
-  draw_combinaciones();
-  draw_path2();
+// Call the functions to draw the shapes
+drawRectangulo();
+drawTriangulo();
+drawPluma();
+drawLineas();
+drawArcos();
+drawCurvas();
+drawCubicas();
+drawRect();
